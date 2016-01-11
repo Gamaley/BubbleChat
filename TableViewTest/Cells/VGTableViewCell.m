@@ -10,14 +10,14 @@
 
 @interface VGTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation VGTableViewCell
 
-@synthesize textLabel = _textLabel;
+//@synthesize textView = _textView;
 @synthesize imageView = _imageView;
 
 - (NSString *)reuseIdentifier
@@ -34,6 +34,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setText:(NSString *)text
+{
+    //self.text = text;
+    self.textView.text = text;
+    
+  //  [self.textView sizeToFit];
 }
 
 - (void)configureCell

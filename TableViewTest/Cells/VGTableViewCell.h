@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) UIImage *chatImage;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end

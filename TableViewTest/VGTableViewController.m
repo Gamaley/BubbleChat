@@ -77,8 +77,11 @@
     }
     
     cell.text = [self.tableObjects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [self.tableObjects objectAtIndex:indexPath.row];//cell.text;
-    [cell.textLabel sizeToFit];
+   // cell.textView.text = [self.tableObjects objectAtIndex:indexPath.row];//cell.text;
+    [cell.textView sizeToFit];
+    
+    double numLines = cell.textView.contentSize.height/cell.textView.font.leading;
+    
     cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
     return cell;
 }
