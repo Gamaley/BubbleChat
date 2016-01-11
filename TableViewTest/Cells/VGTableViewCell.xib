@@ -16,13 +16,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE5-4x-FFb">
-                        <rect key="frame" x="8" y="8" width="139" height="105"/>
+                        <rect key="frame" x="8" y="8" width="150" height="105"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_gr" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-CX-9Dl">
-                                <rect key="frame" x="0.0" y="0.0" width="139" height="105"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Vl-cfH">
-                                <rect key="frame" x="83" y="79" width="48" height="17"/>
+                                <rect key="frame" x="94" y="79" width="48" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Khv-Zn-NgH"/>
                                     <constraint firstAttribute="width" constant="48" id="gXQ-gy-4jm"/>
@@ -31,19 +31,20 @@
                                 <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " translatesAutoresizingMaskIntoConstraints="NO" id="aby-Qv-Oh9">
-                                <rect key="frame" x="12" y="0.0" width="124" height="105"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem" translatesAutoresizingMaskIntoConstraints="NO" id="aby-Qv-Oh9">
+                                <rect key="frame" x="12" y="0.0" width="72" height="74"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aby-Qv-Oh9" secondAttribute="trailing" constant="3" id="0Xq-3D-wlO"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aby-Qv-Oh9" secondAttribute="trailing" constant="5" id="0Xq-3D-wlO"/>
+                            <constraint firstItem="acO-Vl-cfH" firstAttribute="leading" relation="lessThanOrEqual" secondItem="aby-Qv-Oh9" secondAttribute="trailing" priority="750" constant="10" id="6zp-YR-WdO"/>
                             <constraint firstItem="aby-Qv-Oh9" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" constant="12" id="GBI-nw-UdH"/>
-                            <constraint firstAttribute="bottom" secondItem="aby-Qv-Oh9" secondAttribute="bottom" id="Mdx-23-opF"/>
                             <constraint firstItem="RQh-CX-9Dl" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" id="OYH-dI-7QU"/>
+                            <constraint firstItem="acO-Vl-cfH" firstAttribute="top" secondItem="aby-Qv-Oh9" secondAttribute="bottom" priority="750" constant="5" id="S6j-ls-3P6"/>
                             <constraint firstAttribute="bottom" secondItem="acO-Vl-cfH" secondAttribute="bottom" constant="9" id="SZE-9h-Z5i"/>
                             <constraint firstAttribute="trailing" secondItem="acO-Vl-cfH" secondAttribute="trailing" constant="8" id="cbw-Ej-hEa"/>
                             <constraint firstAttribute="trailing" secondItem="RQh-CX-9Dl" secondAttribute="trailing" id="n1r-yE-ALz"/>
@@ -57,12 +58,16 @@
                     <constraint firstItem="rE5-4x-FFb" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="TFU-tm-flo"/>
                     <constraint firstItem="rE5-4x-FFb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WeT-ek-lza"/>
                     <constraint firstItem="rE5-4x-FFb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dWe-r4-6RI"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rE5-4x-FFb" secondAttribute="trailing" constant="117" id="tO7-94-DZI"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rE5-4x-FFb" secondAttribute="trailing" constant="100" id="tO7-94-DZI"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bubbleView" destination="rE5-4x-FFb" id="MCs-co-x8i"/>
+                <outlet property="horizontalConstraint" destination="6zp-YR-WdO" id="uTG-yG-3ef"/>
                 <outlet property="imageView" destination="RQh-CX-9Dl" id="RxU-ZC-A19"/>
                 <outlet property="textView" destination="aby-Qv-Oh9" id="kFb-8E-rat"/>
+                <outlet property="timeStamp" destination="acO-Vl-cfH" id="hJZ-4f-vYX"/>
+                <outlet property="verticalConstraint" destination="S6j-ls-3P6" id="vxK-bF-UST"/>
             </connections>
             <point key="canvasLocation" x="167" y="314"/>
         </tableViewCell>

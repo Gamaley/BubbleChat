@@ -24,7 +24,7 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     NSString *a = @"Hello!";
-    NSString *b = @"To do this, we simply set";
+    NSString *b = @"To do this?2";//, we simply set!!!";
     NSString *c = @"VGTableViewCell an Edit button in the navigation bar for this view controller";
     NSString *d = @"So to scale the original square both horizontally an Edit button in the navigation bar for this view controller// Uncomncomment the following line to display an Edit buttoncomment the following line to display an Edit buttoment the following line to display an Edit button in the ";
     NSString *e = @"Similarly, if you wanted to scale the image just horizontally, you’d need to ignore the first 8 pixels on the top and bottom parts of the original image, and replicate everything in the middle:The result is looking much better!";
@@ -78,10 +78,28 @@
     
     cell.text = [self.tableObjects objectAtIndex:indexPath.row];
    // cell.textView.text = [self.tableObjects objectAtIndex:indexPath.row];//cell.text;
-    [cell.textView sizeToFit];
-    
-    double numLines = cell.textView.contentSize.height/cell.textView.font.leading;
-    
+    //[cell.textView sizeToFit];
+//    
+//    double numLines = cell.textView.contentSize.height/cell.textView.font.leading;
+//    double f = cell.textView.contentSize.height;
+//    double ff = cell.textView.font.leading;
+//    float rows = (cell.textView.contentSize.height - cell.textView.textContainerInset.top - cell.textView.textContainerInset.bottom) / cell.textView.font.lineHeight;
+//    
+//    if (f > 40.0) {
+//        NSLayoutConstraint *heigh = [NSLayoutConstraint constraintWithItem:cell.textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:cell.timeStamp attribute:NSLayoutAttributeTop multiplier:1 constant:5];
+//        
+       // [cell addConstraint:heigh];
+  //  }
+//    NSString *text1 = [self.tableObjects objectAtIndex:indexPath.row];
+//    if (text1.length < 20) {
+//        if (cell.verticalConstraint.priority == UILayoutPriorityDefaultHigh) {
+//            
+//        }
+//        [cell.verticalConstraint setPriority:UILayoutPriorityDefaultLow];
+//    } else {
+//        [cell.verticalConstraint setPriority:UILayoutPriorityDefaultHigh];
+//    }
+        NSLog(@"%li",cell.textView.text.length);
     cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
     return cell;
 }
