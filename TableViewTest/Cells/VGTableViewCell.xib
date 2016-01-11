@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="122" id="KGk-i7-Jjw" customClass="VGTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="272" height="122"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="272" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE5-4x-FFb">
+                        <rect key="frame" x="8" y="8" width="150" height="105"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_gr" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-CX-9Dl">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eX3-Eg-mZH">
+                                <rect key="frame" x="22" y="10" width="61" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Vl-cfH">
+                                <rect key="frame" x="87" y="77" width="48" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="0aU-6I-0VL"/>
+                                    <constraint firstAttribute="width" constant="48" id="ZI9-4g-19E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RQh-CX-9Dl" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" id="7Qf-Xg-x1G"/>
+                            <constraint firstItem="eX3-Eg-mZH" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" constant="10" id="DlL-2d-IpY"/>
+                            <constraint firstItem="eX3-Eg-mZH" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" constant="22" id="Dlr-TU-12V"/>
+                            <constraint firstAttribute="bottom" secondItem="acO-Vl-cfH" secondAttribute="bottom" constant="10" id="EZ0-dH-uhd"/>
+                            <constraint firstItem="RQh-CX-9Dl" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" id="WDi-fK-53P"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eX3-Eg-mZH" secondAttribute="trailing" constant="15" id="XfX-LG-2wW"/>
+                            <constraint firstAttribute="trailing" secondItem="RQh-CX-9Dl" secondAttribute="trailing" id="YC2-LO-M5c"/>
+                            <constraint firstItem="acO-Vl-cfH" firstAttribute="leading" secondItem="eX3-Eg-mZH" secondAttribute="trailing" priority="750" constant="4" id="YSS-TA-6jB"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eX3-Eg-mZH" secondAttribute="bottom" priority="750" constant="10" id="YiL-OL-4Gu"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="220" id="a9P-mg-llQ"/>
+                            <constraint firstAttribute="bottom" secondItem="RQh-CX-9Dl" secondAttribute="bottom" id="eUI-go-2qA"/>
+                            <constraint firstAttribute="trailing" secondItem="acO-Vl-cfH" secondAttribute="trailing" constant="15" id="nnd-N4-nJo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rE5-4x-FFb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CeW-j7-zhS"/>
+                    <constraint firstItem="rE5-4x-FFb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jdb-cz-C1W"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rE5-4x-FFb" secondAttribute="bottom" id="x8t-X2-HZ8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageView" destination="RQh-CX-9Dl" id="RxU-ZC-A19"/>
+                <outlet property="textLabel" destination="eX3-Eg-mZH" id="Yng-K8-A72"/>
+            </connections>
+            <point key="canvasLocation" x="167" y="314"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bubble_gr" width="150" height="37"/>
+    </resources>
+</document>

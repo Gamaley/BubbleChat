@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VGTableViewController.h
 //  TableViewTest
 //
 //  Created by Vladyslav on 06.01.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface VGTableViewController : UITableViewController
 
 @end
-

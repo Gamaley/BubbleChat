@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		87D26AB41C3D0550002D4BB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26AB31C3D0550002D4BB8 /* main.m */; };
 		87D26AB71C3D0550002D4BB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26AB61C3D0550002D4BB8 /* AppDelegate.m */; };
-		87D26ABA1C3D0550002D4BB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26AB91C3D0550002D4BB8 /* ViewController.m */; };
 		87D26ABD1C3D0550002D4BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ABB1C3D0550002D4BB8 /* Main.storyboard */; };
 		87D26ABF1C3D0550002D4BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ABE1C3D0550002D4BB8 /* Assets.xcassets */; };
 		87D26AC21C3D0550002D4BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D26AC01C3D0550002D4BB8 /* LaunchScreen.storyboard */; };
+		87D26ACB1C3D05BE002D4BB8 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26ACA1C3D05BE002D4BB8 /* VGTableViewController.m */; };
+		87D26ACF1C3D068A002D4BB8 /* VGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26ACD1C3D068A002D4BB8 /* VGTableViewCell.m */; };
+		87D26AD01C3D068A002D4BB8 /* VGTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ACE1C3D068A002D4BB8 /* VGTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +22,15 @@
 		87D26AB31C3D0550002D4BB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87D26AB51C3D0550002D4BB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87D26AB61C3D0550002D4BB8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		87D26AB81C3D0550002D4BB8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		87D26AB91C3D0550002D4BB8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		87D26ABC1C3D0550002D4BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87D26ABE1C3D0550002D4BB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87D26AC11C3D0550002D4BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87D26AC31C3D0550002D4BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87D26AC91C3D05BE002D4BB8 /* VGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGTableViewController.h; sourceTree = "<group>"; };
+		87D26ACA1C3D05BE002D4BB8 /* VGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGTableViewController.m; sourceTree = "<group>"; };
+		87D26ACC1C3D068A002D4BB8 /* VGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VGTableViewCell.h; path = Cells/VGTableViewCell.h; sourceTree = "<group>"; };
+		87D26ACD1C3D068A002D4BB8 /* VGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VGTableViewCell.m; path = Cells/VGTableViewCell.m; sourceTree = "<group>"; };
+		87D26ACE1C3D068A002D4BB8 /* VGTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VGTableViewCell.xib; path = Cells/VGTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +63,11 @@
 		87D26AB11C3D0550002D4BB8 /* TableViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				87D26AB51C3D0550002D4BB8 /* AppDelegate.h */,
-				87D26AB61C3D0550002D4BB8 /* AppDelegate.m */,
-				87D26AB81C3D0550002D4BB8 /* ViewController.h */,
-				87D26AB91C3D0550002D4BB8 /* ViewController.m */,
 				87D26ABB1C3D0550002D4BB8 /* Main.storyboard */,
+				87D26AD11C3D068F002D4BB8 /* Cells */,
+				87D26AC91C3D05BE002D4BB8 /* VGTableViewController.h */,
+				87D26ACA1C3D05BE002D4BB8 /* VGTableViewController.m */,
 				87D26ABE1C3D0550002D4BB8 /* Assets.xcassets */,
-				87D26AC01C3D0550002D4BB8 /* LaunchScreen.storyboard */,
-				87D26AC31C3D0550002D4BB8 /* Info.plist */,
 				87D26AB21C3D0550002D4BB8 /* Supporting Files */,
 			);
 			path = TableViewTest;
@@ -74,9 +76,23 @@
 		87D26AB21C3D0550002D4BB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87D26AB51C3D0550002D4BB8 /* AppDelegate.h */,
+				87D26AB61C3D0550002D4BB8 /* AppDelegate.m */,
+				87D26AC01C3D0550002D4BB8 /* LaunchScreen.storyboard */,
+				87D26AC31C3D0550002D4BB8 /* Info.plist */,
 				87D26AB31C3D0550002D4BB8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87D26AD11C3D068F002D4BB8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				87D26ACC1C3D068A002D4BB8 /* VGTableViewCell.h */,
+				87D26ACD1C3D068A002D4BB8 /* VGTableViewCell.m */,
+				87D26ACE1C3D068A002D4BB8 /* VGTableViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D26AD01C3D068A002D4BB8 /* VGTableViewCell.xib in Resources */,
 				87D26AC21C3D0550002D4BB8 /* LaunchScreen.storyboard in Resources */,
 				87D26ABF1C3D0550002D4BB8 /* Assets.xcassets in Resources */,
 				87D26ABD1C3D0550002D4BB8 /* Main.storyboard in Resources */,
@@ -150,9 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D26ABA1C3D0550002D4BB8 /* ViewController.m in Sources */,
+				87D26ACF1C3D068A002D4BB8 /* VGTableViewCell.m in Sources */,
 				87D26AB71C3D0550002D4BB8 /* AppDelegate.m in Sources */,
 				87D26AB41C3D0550002D4BB8 /* main.m in Sources */,
+				87D26ACB1C3D05BE002D4BB8 /* VGTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
