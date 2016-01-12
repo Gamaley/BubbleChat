@@ -6,14 +6,14 @@
 //  Copyright © 2016 Vladyslav Gamalii. All rights reserved.
 //
 
-#import "ChatTableViewCell.h"
+#import "IncomingChatTableViewCell.h"
 
 static int const MaxCharacterLength = 15;
-static int const TextViewConstraintConstant = -5;
+static int const TextViewConstraintConstant = -7;
 static float const UILayoutPriorityUpperHigh = 755.f;
 
 
-@interface ChatTableViewCell ()
+@interface IncomingChatTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *timeStamp;
 @property (weak, nonatomic) IBOutlet UIView *bubbleView;
@@ -26,20 +26,20 @@ static float const UILayoutPriorityUpperHigh = 755.f;
 
 @end
 
-@implementation ChatTableViewCell
+@implementation IncomingChatTableViewCell
 
 @synthesize imageView = _imageView;
 
 - (void)prepareForReuse
 {
-    self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
+    //self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
     self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultHigh;
     self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
 }
 
 - (NSString *)reuseIdentifier
 {
-    return @"ChatCell";
+    return @"IncomingChatCell";
 }
 
 
@@ -59,7 +59,9 @@ static float const UILayoutPriorityUpperHigh = 755.f;
     if (text.length < MaxCharacterLength) {
         self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
         self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityUpperHigh;
-    } 
+    } else {
+        self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
+    }
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "VGTableViewController.h"
-#import "ChatTableViewCell.h"
+#import "IncomingChatTableViewCell.h"
 #import "OutgoingChatTableViewCell.h"
 
 @interface VGTableViewController ()
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"ChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"ChatCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"IncomingChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"IncomingChatCell"];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"OutgoingChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"OutgoingChatCell"];
     
@@ -35,7 +35,10 @@
     NSString *g = @"123456789012345";
     NSString *h = @"12345678901";
     NSString *i = @"1234567890123";
-    self.tableObjects = @[a,g,b,i,h,c,d,e,f];
+    NSString *j = @"Whats'up?";
+    NSString *k = @"Fine, thanks!";
+    NSString *l = @"Curabitur lobortis id lor em id bibendum.";
+    self.tableObjects = @[a,j,k,l,g,b,i,h,c,d,e,f];
 
 }
 
@@ -77,15 +80,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    static NSString *Identifier = @"ChatCell";
+    static NSString *Identifier = @"IncomingChatCell";
     static NSString *Identifier2 = @"OutgoingChatCell";
     
     BOOL isCell = arc4random_uniform(100)%2;
     
     if (isCell) {
-    ChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+    IncomingChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
         if (!cell) {
-            cell = [[ChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+            cell = [[IncomingChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
         }
         
         cell.text = [self.tableObjects objectAtIndex:indexPath.row];

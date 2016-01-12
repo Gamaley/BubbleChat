@@ -9,8 +9,8 @@
 
 #import "OutgoingChatTableViewCell.h"
 
-static int const MaxCharacterLength = 15;
-static int const TextViewConstraintConstant = -5;
+static int const MaxCharacterLength = 12;
+static int const TextViewConstraintConstant = -7;
 static float const UILayoutPriorityUpperHigh = 755.f;
 
 
@@ -23,6 +23,7 @@ static float const UILayoutPriorityUpperHigh = 755.f;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceTextViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingSpaceTextViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bubbleViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *deliveryStatusImageView;
 
 
 @end
@@ -33,7 +34,7 @@ static float const UILayoutPriorityUpperHigh = 755.f;
 
 - (void)prepareForReuse
 {
-    self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
+   // self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
     self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultHigh;
     self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
 }
@@ -60,6 +61,8 @@ static float const UILayoutPriorityUpperHigh = 755.f;
     if (text.length < MaxCharacterLength) {
         self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
         self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityUpperHigh;
+    } else {
+        self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
     }
 }
 

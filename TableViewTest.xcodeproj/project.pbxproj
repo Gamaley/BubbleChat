@@ -15,8 +15,8 @@
 		87D26ABF1C3D0550002D4BB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ABE1C3D0550002D4BB8 /* Assets.xcassets */; };
 		87D26AC21C3D0550002D4BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D26AC01C3D0550002D4BB8 /* LaunchScreen.storyboard */; };
 		87D26ACB1C3D05BE002D4BB8 /* VGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26ACA1C3D05BE002D4BB8 /* VGTableViewController.m */; };
-		87D26ACF1C3D068A002D4BB8 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26ACD1C3D068A002D4BB8 /* ChatTableViewCell.m */; };
-		87D26AD01C3D068A002D4BB8 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ACE1C3D068A002D4BB8 /* ChatTableViewCell.xib */; };
+		87D26ACF1C3D068A002D4BB8 /* IncomingChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26ACD1C3D068A002D4BB8 /* IncomingChatTableViewCell.m */; };
+		87D26AD01C3D068A002D4BB8 /* IncomingChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ACE1C3D068A002D4BB8 /* IncomingChatTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		87D26AC31C3D0550002D4BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87D26AC91C3D05BE002D4BB8 /* VGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGTableViewController.h; sourceTree = "<group>"; };
 		87D26ACA1C3D05BE002D4BB8 /* VGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGTableViewController.m; sourceTree = "<group>"; };
-		87D26ACC1C3D068A002D4BB8 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatTableViewCell.h; path = Cells/ChatTableViewCell.h; sourceTree = "<group>"; };
-		87D26ACD1C3D068A002D4BB8 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatTableViewCell.m; path = Cells/ChatTableViewCell.m; sourceTree = "<group>"; };
-		87D26ACE1C3D068A002D4BB8 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatTableViewCell.xib; path = Cells/ChatTableViewCell.xib; sourceTree = "<group>"; };
+		87D26ACC1C3D068A002D4BB8 /* IncomingChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomingChatTableViewCell.h; path = Cells/IncomingChatTableViewCell.h; sourceTree = "<group>"; };
+		87D26ACD1C3D068A002D4BB8 /* IncomingChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomingChatTableViewCell.m; path = Cells/IncomingChatTableViewCell.m; sourceTree = "<group>"; };
+		87D26ACE1C3D068A002D4BB8 /* IncomingChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IncomingChatTableViewCell.xib; path = Cells/IncomingChatTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +52,9 @@
 		8763FF7B1C43FF37003C0BEA /* IncomingChatCell */ = {
 			isa = PBXGroup;
 			children = (
-				87D26ACC1C3D068A002D4BB8 /* ChatTableViewCell.h */,
-				87D26ACD1C3D068A002D4BB8 /* ChatTableViewCell.m */,
-				87D26ACE1C3D068A002D4BB8 /* ChatTableViewCell.xib */,
+				87D26ACC1C3D068A002D4BB8 /* IncomingChatTableViewCell.h */,
+				87D26ACD1C3D068A002D4BB8 /* IncomingChatTableViewCell.m */,
+				87D26ACE1C3D068A002D4BB8 /* IncomingChatTableViewCell.xib */,
 			);
 			name = IncomingChatCell;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D26AD01C3D068A002D4BB8 /* ChatTableViewCell.xib in Resources */,
+				87D26AD01C3D068A002D4BB8 /* IncomingChatTableViewCell.xib in Resources */,
 				87D26AC21C3D0550002D4BB8 /* LaunchScreen.storyboard in Resources */,
 				8763FF811C43FFB0003C0BEA /* OutgoingChatTableViewCell.xib in Resources */,
 				87D26ABF1C3D0550002D4BB8 /* Assets.xcassets in Resources */,
@@ -192,7 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D26ACF1C3D068A002D4BB8 /* ChatTableViewCell.m in Sources */,
+				87D26ACF1C3D068A002D4BB8 /* IncomingChatTableViewCell.m in Sources */,
 				8763FF801C43FFB0003C0BEA /* OutgoingChatTableViewCell.m in Sources */,
 				87D26AB71C3D0550002D4BB8 /* AppDelegate.m in Sources */,
 				87D26AB41C3D0550002D4BB8 /* main.m in Sources */,

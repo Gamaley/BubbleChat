@@ -22,38 +22,53 @@
                                 <rect key="frame" x="0.0" y="0.0" width="137" height="105"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFv-Ls-MkI">
-                                <rect key="frame" x="73" y="79" width="48" height="17"/>
+                                <rect key="frame" x="62" y="79" width="48" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="A2T-1E-4gB"/>
                                     <constraint firstAttribute="width" constant="48" id="YMU-XB-OKT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="11"/>
-                                <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.25882352941176467" green="0.74117647058823533" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem" translatesAutoresizingMaskIntoConstraints="NO" id="IRV-eJ-cwG">
-                                <rect key="frame" x="12" y="0.0" width="56" height="74"/>
+                                <rect key="frame" x="12" y="0.0" width="54" height="78"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delivered" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-vk-U6j">
+                                <rect key="frame" x="117" y="84" width="9" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="9" id="6H3-wQ-GTI"/>
+                                    <constraint firstAttribute="height" constant="8" id="v1I-dL-qD6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4MP-Iw-h5O" secondAttribute="trailing" constant="5" id="4Qt-HK-ta6"/>
                             <constraint firstItem="IRV-eJ-cwG" firstAttribute="top" secondItem="hz1-je-eyS" secondAttribute="top" id="9dS-cL-zLg"/>
+                            <constraint firstAttribute="trailing" secondItem="bPE-vk-U6j" secondAttribute="trailing" constant="16" id="9h4-X0-Acf"/>
                             <constraint firstAttribute="bottom" secondItem="4MP-Iw-h5O" secondAttribute="bottom" id="FTC-he-IMx"/>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="213" id="TQA-p9-JFM"/>
                             <constraint firstItem="4MP-Iw-h5O" firstAttribute="leading" secondItem="hz1-je-eyS" secondAttribute="leading" id="UGs-aU-7Hc"/>
-                            <constraint firstItem="zFv-Ls-MkI" firstAttribute="top" secondItem="IRV-eJ-cwG" secondAttribute="bottom" priority="750" constant="5" id="XqE-Zp-ypQ"/>
+                            <constraint firstItem="zFv-Ls-MkI" firstAttribute="top" secondItem="IRV-eJ-cwG" secondAttribute="bottom" priority="750" constant="1" id="XqE-Zp-ypQ"/>
                             <constraint firstItem="zFv-Ls-MkI" firstAttribute="leading" secondItem="IRV-eJ-cwG" secondAttribute="trailing" priority="750" constant="5" id="Zle-29-yCY"/>
                             <constraint firstAttribute="trailing" secondItem="zFv-Ls-MkI" secondAttribute="trailing" constant="21" id="bzd-Hh-SpP"/>
                             <constraint firstAttribute="bottom" secondItem="zFv-Ls-MkI" secondAttribute="bottom" constant="9" id="dlW-xp-Md2"/>
                             <constraint firstAttribute="trailing" secondItem="IRV-eJ-cwG" secondAttribute="trailing" priority="750" constant="21" id="gUU-FR-PMb"/>
+                            <constraint firstItem="bPE-vk-U6j" firstAttribute="leading" secondItem="zFv-Ls-MkI" secondAttribute="trailing" constant="7" id="hXv-2Y-DLn"/>
+                            <constraint firstAttribute="bottom" secondItem="bPE-vk-U6j" secondAttribute="bottom" constant="13" id="nJo-7x-6Ad"/>
                             <constraint firstItem="IRV-eJ-cwG" firstAttribute="leading" secondItem="hz1-je-eyS" secondAttribute="leading" constant="12" id="uTm-1e-NA0"/>
                             <constraint firstItem="4MP-Iw-h5O" firstAttribute="top" secondItem="hz1-je-eyS" secondAttribute="top" id="ymg-b9-Rfe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bzd-Hh-SpP"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
@@ -66,6 +81,7 @@
                 <outlet property="bottomSpaceTextViewConstraint" destination="XqE-Zp-ypQ" id="Huh-nK-bMJ"/>
                 <outlet property="bubbleView" destination="hz1-je-eyS" id="63A-i6-kgd"/>
                 <outlet property="bubbleViewWidthConstraint" destination="TQA-p9-JFM" id="ELv-PW-dWF"/>
+                <outlet property="deliveryStatusImageView" destination="bPE-vk-U6j" id="tKi-8v-b0V"/>
                 <outlet property="imageView" destination="4MP-Iw-h5O" id="0cJ-Xt-JAS"/>
                 <outlet property="textView" destination="IRV-eJ-cwG" id="lAe-Ww-crC"/>
                 <outlet property="timeStamp" destination="zFv-Ls-MkI" id="Mxl-ra-mc3"/>
@@ -76,5 +92,6 @@
     </objects>
     <resources>
         <image name="bubble_mi" width="137" height="37"/>
+        <image name="delivered" width="10" height="8"/>
     </resources>
 </document>
