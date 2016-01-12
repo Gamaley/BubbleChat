@@ -7,7 +7,8 @@
 //
 
 #import "VGTableViewController.h"
-#import "VGTableViewCell.h"
+#import "ChatTableViewCell.h"
+#import "OutgoingChatTableViewCell.h"
 
 @interface VGTableViewController ()
 
@@ -17,31 +18,32 @@
 
 @implementation VGTableViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"VGTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"ChatCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"OutgoingChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"OutgoingChatCell"];
+    
     NSString *a = @"Hello!";
-    NSString *b = @"To do this?2";//, we simply set!!!";
-    NSString *c = @"VGTableViewCell an Edit button in the navigation bar for this view controller";
-    NSString *d = @"So to scale the original square both horizontally an Edit button in the navigation bar for this view controller// Uncomncomment the following line to display an Edit buttoncomment the following line to display an Edit buttoment the following line to display an Edit button in the ";
+    NSString *b = @"To do line?";
+    NSString *c = @"VGTableViewCell an Edit button";
+    NSString *d = @"So to scale the original square both horizontally an Edit button in the navigation bar for this view controller";
     NSString *e = @"Similarly, if you wanted to scale the image just horizontally, you’d need to ignore the first 8 pixels on the top and bottom parts of the original image, and replicate everything in the middle:The result is looking much better!";
     NSString *f = @"Similarly, if you wanted to scale the image just horizontally, you’d need to ignore the first 8 pixels on the top and bottom parts of the original image, and replicate everything in the middle:The result is looking much better!So to scale the original square both horizontally an Edit button in the navigation bar for this view controller// Uncomncomment the following line to display an Edit buttoncomment the following line to display an Edit buttoment the following line to display a";
-    
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.tableObjects = @[a,b,c,d,e,f];
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *g = @"123456789012345";
+    NSString *h = @"12345678901";
+    NSString *i = @"1234567890123";
+    self.tableObjects = @[a,g,b,i,h,c,d,e,f];
+
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self.tableView reloadData];
-}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [self.tableView reloadData];
+//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -65,48 +67,57 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tableObjects.count;
 }
-
+//
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(ChatTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+////    NSLog(@"%f", cell.bubbleView.frame.size.width);
+////    NSLog(@"%f", cell.textView.frame.size.width);
+////    NSLog(@"%f", cell.contentView.frame.size.width);
+//    
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    static NSString *Identifier = @"Cell";
-    VGTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+    static NSString *Identifier = @"ChatCell";
+    static NSString *Identifier2 = @"OutgoingChatCell";
     
-    if (!cell) {
-        cell = [[VGTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+    BOOL isCell = arc4random_uniform(100)%2;
+    
+    if (isCell) {
+    ChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+        if (!cell) {
+            cell = [[ChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
+        }
+        
+        cell.text = [self.tableObjects objectAtIndex:indexPath.row];
+        cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
+        return cell;
+        
+    } else {
+        
+      OutgoingChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier2 forIndexPath:indexPath];
+        
+        if (!cell) {
+            cell = [[OutgoingChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier2];
+        }
+        
+        
+        cell.text = [self.tableObjects objectAtIndex:indexPath.row];
+        
+        cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
+        return cell;
     }
     
-    cell.text = [self.tableObjects objectAtIndex:indexPath.row];
-   // cell.textView.text = [self.tableObjects objectAtIndex:indexPath.row];//cell.text;
-    //[cell.textView sizeToFit];
-//    
-//    double numLines = cell.textView.contentSize.height/cell.textView.font.leading;
-//    double f = cell.textView.contentSize.height;
-//    double ff = cell.textView.font.leading;
-//    float rows = (cell.textView.contentSize.height - cell.textView.textContainerInset.top - cell.textView.textContainerInset.bottom) / cell.textView.font.lineHeight;
-//    
-//    if (f > 40.0) {
-//        NSLayoutConstraint *heigh = [NSLayoutConstraint constraintWithItem:cell.textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:cell.timeStamp attribute:NSLayoutAttributeTop multiplier:1 constant:5];
-//        
-       // [cell addConstraint:heigh];
-  //  }
-//    NSString *text1 = [self.tableObjects objectAtIndex:indexPath.row];
-//    if (text1.length < 20) {
-//        if (cell.verticalConstraint.priority == UILayoutPriorityDefaultHigh) {
-//            
-//        }
-//        [cell.verticalConstraint setPriority:UILayoutPriorityDefaultLow];
-//    } else {
-//        [cell.verticalConstraint setPriority:UILayoutPriorityDefaultHigh];
+//    if (!cell) {
+//        cell = [[ChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
 //    }
-        NSLog(@"%li",cell.textView.text.length);
-    cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
-    return cell;
+//    
+//    
+//    cell.text = [self.tableObjects objectAtIndex:indexPath.row];
+//
+//    cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
+//    return cell;
 }
  
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return 140;
-//}
+
 
 @end
