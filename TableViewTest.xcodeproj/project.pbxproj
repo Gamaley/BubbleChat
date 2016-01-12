@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8763FF801C43FFB0003C0BEA /* OutgoingChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763FF7E1C43FFB0003C0BEA /* OutgoingChatTableViewCell.m */; };
 		8763FF811C43FFB0003C0BEA /* OutgoingChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8763FF7F1C43FFB0003C0BEA /* OutgoingChatTableViewCell.xib */; };
+		8774D8991C44E5CE00E238FE /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8774D8981C44E5CE00E238FE /* ChatTableViewCell.m */; };
 		87D26AB41C3D0550002D4BB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26AB31C3D0550002D4BB8 /* main.m */; };
 		87D26AB71C3D0550002D4BB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87D26AB61C3D0550002D4BB8 /* AppDelegate.m */; };
 		87D26ABD1C3D0550002D4BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D26ABB1C3D0550002D4BB8 /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 		8763FF7D1C43FFB0003C0BEA /* OutgoingChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutgoingChatTableViewCell.h; sourceTree = "<group>"; };
 		8763FF7E1C43FFB0003C0BEA /* OutgoingChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutgoingChatTableViewCell.m; sourceTree = "<group>"; };
 		8763FF7F1C43FFB0003C0BEA /* OutgoingChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutgoingChatTableViewCell.xib; sourceTree = "<group>"; };
+		8774D8971C44E5CE00E238FE /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
+		8774D8981C44E5CE00E238FE /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
 		87D26AAF1C3D0550002D4BB8 /* TableViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D26AB31C3D0550002D4BB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		87D26AB51C3D0550002D4BB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +72,17 @@
 			name = OutgoingChatCell;
 			sourceTree = "<group>";
 		};
+		8774D89A1C44E6DE00E238FE /* ChatTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8763FF7B1C43FF37003C0BEA /* IncomingChatCell */,
+				8763FF7C1C43FF4B003C0BEA /* OutgoingChatCell */,
+				8774D8971C44E5CE00E238FE /* ChatTableViewCell.h */,
+				8774D8981C44E5CE00E238FE /* ChatTableViewCell.m */,
+			);
+			name = ChatTableViewCell;
+			sourceTree = "<group>";
+		};
 		87D26AA61C3D0550002D4BB8 = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +127,7 @@
 		87D26AD11C3D068F002D4BB8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8763FF7C1C43FF4B003C0BEA /* OutgoingChatCell */,
-				8763FF7B1C43FF37003C0BEA /* IncomingChatCell */,
+				8774D89A1C44E6DE00E238FE /* ChatTableViewCell */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -197,6 +210,7 @@
 				87D26AB71C3D0550002D4BB8 /* AppDelegate.m in Sources */,
 				87D26AB41C3D0550002D4BB8 /* main.m in Sources */,
 				87D26ACB1C3D05BE002D4BB8 /* VGTableViewController.m in Sources */,
+				8774D8991C44E5CE00E238FE /* ChatTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

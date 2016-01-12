@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatTableViewCell.h"
 
-@interface IncomingChatTableViewCell : UITableViewCell
-
-@property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) UIImage *chatImage;
-
-
-- (void)prepareForReuse;
+@interface IncomingChatTableViewCell : ChatTableViewCell
 
 @end

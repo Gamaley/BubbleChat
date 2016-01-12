@@ -79,10 +79,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="bottomSpaceTextViewConstraint" destination="XqE-Zp-ypQ" id="Huh-nK-bMJ"/>
+                <outlet property="bubbleImageView" destination="4MP-Iw-h5O" id="9qK-tg-1O1"/>
                 <outlet property="bubbleView" destination="hz1-je-eyS" id="63A-i6-kgd"/>
                 <outlet property="bubbleViewWidthConstraint" destination="TQA-p9-JFM" id="ELv-PW-dWF"/>
                 <outlet property="deliveryStatusImageView" destination="bPE-vk-U6j" id="tKi-8v-b0V"/>
-                <outlet property="imageView" destination="4MP-Iw-h5O" id="0cJ-Xt-JAS"/>
                 <outlet property="textView" destination="IRV-eJ-cwG" id="lAe-Ww-crC"/>
                 <outlet property="timeStamp" destination="zFv-Ls-MkI" id="Mxl-ra-mc3"/>
                 <outlet property="trailingSpaceTextViewConstraint" destination="Zle-29-yCY" id="aqM-I6-Awt"/>

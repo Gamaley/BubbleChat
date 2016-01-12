@@ -16,14 +16,14 @@
 
 @end
 
+
 @implementation VGTableViewController
 
-
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"IncomingChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"IncomingChatCell"];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"OutgoingChatTableViewCell" bundle:nil] forCellReuseIdentifier:@"OutgoingChatCell"];
     
     NSString *a = @"Hello!";
@@ -38,15 +38,10 @@
     NSString *j = @"Whats'up?";
     NSString *k = @"Fine, thanks!";
     NSString *l = @"Curabitur lobortis id lor em id bibendum.";
+    
     self.tableObjects = @[a,j,k,l,g,b,i,h,c,d,e,f];
 
 }
-
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    [self.tableView reloadData];
-//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -55,44 +50,34 @@
     self.tableView.estimatedRowHeight = 500.f;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.tableObjects.count;
 }
-//
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(ChatTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-////    NSLog(@"%f", cell.bubbleView.frame.size.width);
-////    NSLog(@"%f", cell.textView.frame.size.width);
-////    NSLog(@"%f", cell.contentView.frame.size.width);
-//    
-//}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
    
     static NSString *Identifier = @"IncomingChatCell";
     static NSString *Identifier2 = @"OutgoingChatCell";
     
-    BOOL isCell = arc4random_uniform(100)%2;
+    BOOL isCell = arc4random_uniform(1001)%2;
     
     if (isCell) {
     IncomingChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier forIndexPath:indexPath];
+        
         if (!cell) {
             cell = [[IncomingChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
         }
         
         cell.text = [self.tableObjects objectAtIndex:indexPath.row];
-        cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
         return cell;
         
     } else {
@@ -103,24 +88,17 @@
             cell = [[OutgoingChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier2];
         }
         
-        
         cell.text = [self.tableObjects objectAtIndex:indexPath.row];
-        
-        cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
         return cell;
     }
-    
-//    if (!cell) {
-//        cell = [[ChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
-//    }
-//    
-//    
-//    cell.text = [self.tableObjects objectAtIndex:indexPath.row];
-//
-//    cell.imageView.image = [cell.imageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
-//    return cell;
 }
- 
 
+//
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(ChatTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+////    NSLog(@"%f", cell.bubbleView.frame.size.width);
+////    NSLog(@"%f", cell.textView.frame.size.width);
+////    NSLog(@"%f", cell.contentView.frame.size.width);
+//
+//}
 
 @end

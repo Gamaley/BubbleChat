@@ -19,22 +19,20 @@ static float const UILayoutPriorityUpperHigh = 755.f;
 @property (weak, nonatomic) IBOutlet UILabel *timeStamp;
 @property (weak, nonatomic) IBOutlet UIView *bubbleView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *bubbleImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *deliveryStatusImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceTextViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingSpaceTextViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bubbleViewWidthConstraint;
-@property (weak, nonatomic) IBOutlet UIImageView *deliveryStatusImageView;
+
 
 
 @end
 
 @implementation OutgoingChatTableViewCell
 
-@synthesize imageView = _imageView;
-
 - (void)prepareForReuse
 {
-   // self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
     self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultHigh;
     self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
 }
@@ -44,16 +42,11 @@ static float const UILayoutPriorityUpperHigh = 755.f;
     return @"OutgoingChatCell";
 }
 
-
-- (void)awakeFromNib
-{
-    
-}
-
 - (void)setText:(NSString *)text
 {
     self.textView.text = text;
     [self configureCellFrameWithTextLength:text];
+    self.bubbleImageView.image = [self.bubbleImageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
 }
 
 - (void)configureCellFrameWithTextLength:(NSString *)text
