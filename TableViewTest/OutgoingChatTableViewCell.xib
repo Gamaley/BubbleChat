@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="272" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hz1-je-eyS">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hz1-je-eyS">
                         <rect key="frame" x="122" y="8" width="142" height="105"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_mi" translatesAutoresizingMaskIntoConstraints="NO" id="4MP-Iw-h5O">

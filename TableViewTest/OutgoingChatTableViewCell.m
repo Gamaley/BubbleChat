@@ -12,7 +12,7 @@
 static int const MaxCharacterLength = 12;
 static int const TextViewConstraintConstant = -7;
 static float const UILayoutPriorityUpperHigh = 755.f;
-static CGFloat const MaxBubbleChatWidth = 170.f;
+static CGFloat const MaxBubbleChatWidth = 145.f;
 static CGFloat const MinBubbleChatHigh = 53.f;
 
 
