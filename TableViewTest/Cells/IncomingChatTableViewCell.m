@@ -11,6 +11,8 @@
 static int const MaxCharacterLength = 15;
 static int const TextViewConstraintConstant = -7;
 static float const UILayoutPriorityUpperHigh = 755.f;
+static CGFloat const MaxBubbleChatWidth = 200.f;
+static CGFloat const MinBubbleChatHigh = 53.f;
 
 
 @interface IncomingChatTableViewCell ()
@@ -23,7 +25,6 @@ static float const UILayoutPriorityUpperHigh = 755.f;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingSpaceTextViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bubbleViewWidthConstraint;
 
-
 @end
 
 @implementation IncomingChatTableViewCell
@@ -34,7 +35,7 @@ static float const UILayoutPriorityUpperHigh = 755.f;
     self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
 }
 
-- (NSString *)reuseIdentifier
++ (NSString *)reuseIdentifier
 {
     return @"IncomingChatCell";
 }
@@ -54,6 +55,24 @@ static float const UILayoutPriorityUpperHigh = 755.f;
     } else {
         self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
     }
+}
+
++ (double)rowHeightForText:(NSString *)text
+{
+    if (text.length < MaxCharacterLength) {
+        return MinBubbleChatHigh;
+    }
+    
+    CGFloat maxW = 0;
+    
+    if (text.length > MaxCharacterLength && text.length < 27) {
+        return 69.5f;
+    }
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Light" size:16]};
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(MaxBubbleChatWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    
+    return [text boundingRectWithSize:CGSizeMake(MaxBubbleChatWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size.height+51;
 }
 
 @end

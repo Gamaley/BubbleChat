@@ -11,4 +11,9 @@
 
 @interface OutgoingChatTableViewCell : ChatTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *bubbleView;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
+- (double)rowHeightForTextView:(UITextView *) textView;
+
 @end

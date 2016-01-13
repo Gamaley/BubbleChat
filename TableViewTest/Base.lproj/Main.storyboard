@@ -25,6 +25,32 @@
             </objects>
             <point key="canvasLocation" x="511" y="102"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="g6S-nW-bIh">
+            <objects>
+                <viewController id="nJo-Lz-SlB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VFA-h1-kst">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7b0-Qx-1ZX">
+                                <rect key="frame" x="6" y="51" width="309" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Curabitur lobortis id lor em id bibendum.
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1e-IG-jeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="224"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QP3-4F-uHh">
             <objects>

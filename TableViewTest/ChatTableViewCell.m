@@ -10,5 +10,14 @@
 
 @implementation ChatTableViewCell
 
++ (NSString *)reuseIdentifier
+{
+    return nil;
+}
+
++ (double)rowHeightForText:(NSString *)text
+{
+    return 0;
+}
 
 @end

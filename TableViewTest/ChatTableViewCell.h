@@ -13,4 +13,7 @@
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) UIImage *chatImage;
 
++ (NSString *)reuseIdentifier;
++ (double)rowHeightForText:(NSString *)text;
+
 @end
