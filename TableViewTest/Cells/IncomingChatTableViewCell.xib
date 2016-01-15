@@ -3,75 +3,77 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomingChatCell" rowHeight="122" id="KGk-i7-Jjw" customClass="IncomingChatTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="272" height="122"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="272" height="121"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rE5-4x-FFb">
-                        <rect key="frame" x="8" y="8" width="150" height="105"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rE5-4x-FFb">
+                        <rect key="frame" x="5" y="5" width="220" height="111"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bubble_gr" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-CX-9Dl">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="105"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_gr" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-CX-9Dl">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="111"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10:10 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Vl-cfH">
-                                <rect key="frame" x="94" y="79" width="48" height="17"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem" translatesAutoresizingMaskIntoConstraints="NO" id="aby-Qv-Oh9">
+                                <rect key="frame" x="15" y="5" width="200" height="101"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Vl-cfH">
+                                <rect key="frame" x="160" y="86" width="48" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="Khv-Zn-NgH"/>
-                                    <constraint firstAttribute="width" constant="48" id="gXQ-gy-4jm"/>
+                                    <constraint firstAttribute="height" constant="17" id="WGV-oX-W2a"/>
+                                    <constraint firstAttribute="width" constant="48" id="d7P-1e-Yzn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="11"/>
                                 <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem" translatesAutoresizingMaskIntoConstraints="NO" id="aby-Qv-Oh9">
-                                <rect key="frame" x="12" y="0.0" width="77" height="74"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aby-Qv-Oh9" secondAttribute="trailing" priority="750" constant="5" id="0Xq-3D-wlO"/>
-                            <constraint firstItem="acO-Vl-cfH" firstAttribute="leading" secondItem="aby-Qv-Oh9" secondAttribute="trailing" priority="750" constant="5" id="6zp-YR-WdO"/>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="211" id="BQI-9h-j1W"/>
-                            <constraint firstItem="aby-Qv-Oh9" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" constant="12" id="GBI-nw-UdH"/>
-                            <constraint firstItem="RQh-CX-9Dl" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" id="OYH-dI-7QU"/>
-                            <constraint firstItem="acO-Vl-cfH" firstAttribute="top" secondItem="aby-Qv-Oh9" secondAttribute="bottom" priority="750" constant="5" id="S6j-ls-3P6"/>
-                            <constraint firstAttribute="bottom" secondItem="acO-Vl-cfH" secondAttribute="bottom" constant="9" id="SZE-9h-Z5i"/>
-                            <constraint firstAttribute="trailing" secondItem="acO-Vl-cfH" secondAttribute="trailing" constant="8" id="cbw-Ej-hEa"/>
-                            <constraint firstAttribute="trailing" secondItem="RQh-CX-9Dl" secondAttribute="trailing" id="n1r-yE-ALz"/>
-                            <constraint firstItem="aby-Qv-Oh9" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" id="o5C-hR-DRy"/>
-                            <constraint firstItem="RQh-CX-9Dl" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" id="tSc-es-DH5"/>
-                            <constraint firstAttribute="bottom" secondItem="RQh-CX-9Dl" secondAttribute="bottom" id="wOz-aS-IZV"/>
+                            <constraint firstAttribute="trailing" secondItem="aby-Qv-Oh9" secondAttribute="trailing" constant="5" id="7iB-Sx-ehE"/>
+                            <constraint firstItem="RQh-CX-9Dl" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" id="KaK-Nd-hRE"/>
+                            <constraint firstItem="aby-Qv-Oh9" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" constant="5" id="QiV-uL-0a7"/>
+                            <constraint firstItem="aby-Qv-Oh9" firstAttribute="leading" secondItem="rE5-4x-FFb" secondAttribute="leading" constant="15" id="Utc-lt-7G6"/>
+                            <constraint firstAttribute="bottom" secondItem="acO-Vl-cfH" secondAttribute="bottom" constant="8" id="WER-Ch-CCR"/>
+                            <constraint firstAttribute="trailing" secondItem="RQh-CX-9Dl" secondAttribute="trailing" id="fsG-wH-WpC"/>
+                            <constraint firstAttribute="trailing" secondItem="acO-Vl-cfH" secondAttribute="trailing" constant="12" id="p4g-bN-3gd"/>
+                            <constraint firstAttribute="bottom" secondItem="aby-Qv-Oh9" secondAttribute="bottom" constant="5" id="vUK-4c-rgK"/>
+                            <constraint firstAttribute="bottom" secondItem="RQh-CX-9Dl" secondAttribute="bottom" id="vh3-qi-Kyd"/>
+                            <constraint firstItem="RQh-CX-9Dl" firstAttribute="top" secondItem="rE5-4x-FFb" secondAttribute="top" id="zag-f2-yyb"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="rE5-4x-FFb" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="TFU-tm-flo"/>
-                    <constraint firstItem="rE5-4x-FFb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WeT-ek-lza"/>
-                    <constraint firstItem="rE5-4x-FFb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dWe-r4-6RI"/>
+                    <constraint firstItem="rE5-4x-FFb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="AxC-xg-pna"/>
+                    <constraint firstItem="rE5-4x-FFb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Igg-X6-LO8"/>
+                    <constraint firstAttribute="bottom" secondItem="rE5-4x-FFb" secondAttribute="bottom" constant="5" id="aJH-zF-oiS"/>
+                    <constraint firstAttribute="trailing" secondItem="rE5-4x-FFb" secondAttribute="trailing" constant="95" id="t0X-4g-odX"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="bottomSpaceTextViewConstraint" destination="S6j-ls-3P6" id="ROX-9v-6Pg"/>
+                <outlet property="bottomPaddingLabelConstraint" destination="WER-Ch-CCR" id="l7V-e2-dmQ"/>
                 <outlet property="bubbleImageView" destination="RQh-CX-9Dl" id="Whr-Sy-1Mh"/>
                 <outlet property="bubbleView" destination="rE5-4x-FFb" id="7cY-oM-EJ2"/>
-                <outlet property="bubbleViewWidthConstraint" destination="BQI-9h-j1W" id="N1v-Qi-3ej"/>
+                <outlet property="containerRightPaddingConstraint" destination="t0X-4g-odX" id="PoY-7Q-Jn2"/>
                 <outlet property="textView" destination="aby-Qv-Oh9" id="cmI-k8-Ei6"/>
                 <outlet property="timeStamp" destination="acO-Vl-cfH" id="puG-OD-jPU"/>
-                <outlet property="trailingSpaceTextViewConstraint" destination="6zp-YR-WdO" id="DOf-Nc-adJ"/>
             </connections>
-            <point key="canvasLocation" x="167" y="314"/>
+            <point key="canvasLocation" x="-10" y="322"/>
         </tableViewCell>
     </objects>
     <resources>

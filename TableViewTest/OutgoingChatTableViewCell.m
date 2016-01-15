@@ -9,23 +9,30 @@
 
 #import "OutgoingChatTableViewCell.h"
 
-static int const MaxCharacterLength = 12;
-static int const TextViewConstraintConstant = -7;
-static float const UILayoutPriorityUpperHigh = 755.f;
-static CGFloat const MaxBubbleChatWidth = 145.f;
-static CGFloat const MinBubbleChatHigh = 53.f;
+static CGFloat const ContainerLeftPadding = 95.f;
+static CGFloat const ContainerRightPadding = 5.f;
+static CGFloat const ContainerTopPadding = 5.f;
+static CGFloat const ContainerBottomPadding = 5.f;
 
+static CGFloat const TextViewLeftPadding = 5.f;
+static CGFloat const TextViewRightPadding = 5.f;
+static CGFloat const TextViewTopPadding = 5.f;
+static CGFloat const TextViewBottomPadding = 5.f;
+
+static CGFloat const TimeStampContainerViewWidth = 78.f;
+static CGFloat const DefaultBottomTimeStampContainerConstraint = 8.f;
+static CGFloat const InOneLineBottomTimeStampPaddingConstraint = 14.f;
 
 @interface OutgoingChatTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *timeStamp;
-
-
+@property (weak, nonatomic) IBOutlet UIView *timeStampContainerView;
+@property (weak, nonatomic) IBOutlet UIView *bubbleView;
+@property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIImageView *bubbleImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *deliveryStatusImageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpaceTextViewConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailingSpaceTextViewConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bubbleViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomTimeStampContainerConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftBubbleContainerConstraint;
 
 @end
 
@@ -33,8 +40,8 @@ static CGFloat const MinBubbleChatHigh = 53.f;
 
 - (void)prepareForReuse
 {
-    self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultHigh;
-    self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
+    self.leftBubbleContainerConstraint.constant = ContainerLeftPadding;
+    self.bottomTimeStampContainerConstraint.constant = DefaultBottomTimeStampContainerConstraint;
 }
 
 + (NSString *)reuseIdentifier
@@ -45,42 +52,51 @@ static CGFloat const MinBubbleChatHigh = 53.f;
 - (void)setText:(NSString *)text
 {
     self.textView.text = text;
-    [self configureCellFrameWithTextLength:text];
-    self.bubbleImageView.image = [self.bubbleImageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
-}
-
-- (void)configureCellFrameWithTextLength:(NSString *)text
-{
-    if (text.length < MaxCharacterLength) {
-        self.bottomSpaceTextViewConstraint.priority = UILayoutPriorityDefaultLow;
-        self.trailingSpaceTextViewConstraint.priority = UILayoutPriorityUpperHigh;
-    } else {
-        self.bottomSpaceTextViewConstraint.constant = TextViewConstraintConstant;
-    }
-}
-
-- (double)rowHeightForTextView:(UITextView *) textView
-{
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Light" size:16]};
-    CGRect d = [textView.text boundingRectWithSize:CGSizeMake(MaxBubbleChatWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    double screenWidth = [UIScreen mainScreen].bounds.size.width;
+    double delta = ContainerLeftPadding + ContainerRightPadding + TextViewLeftPadding + TextViewRightPadding;
     
-    return d.size.height;
+    double expectedWidth = [self.textView sizeThatFits:CGSizeMake(screenWidth - delta, MAXFLOAT)].width;
+    double calculatedConstraint = screenWidth - expectedWidth - ContainerRightPadding - TextViewLeftPadding - TextViewRightPadding;
+    
+    if (calculatedConstraint > ContainerLeftPadding) {
+        double resultinConstraint = calculatedConstraint - TimeStampContainerViewWidth;
+        if (resultinConstraint < ContainerLeftPadding) {
+            self.leftBubbleContainerConstraint.constant = calculatedConstraint;
+        } else {
+            self.leftBubbleContainerConstraint.constant = calculatedConstraint - TimeStampContainerViewWidth;
+            self.bottomTimeStampContainerConstraint.constant = InOneLineBottomTimeStampPaddingConstraint;
+        }
+    } else {
+        self.leftBubbleContainerConstraint.constant = calculatedConstraint;
+    }
+
+    [self layoutIfNeeded];
+    self.bubbleImageView.image = [self.bubbleImageView.image resizableImageWithCapInsets:UIEdgeInsetsMake(13, 13, 13, 13) resizingMode:UIImageResizingModeStretch];
 }
 
 + (double)rowHeightForText:(NSString *)text
 {
-    if (text.length < MaxCharacterLength) {
-        return MinBubbleChatHigh;
+    double delta = ContainerLeftPadding + ContainerRightPadding + TextViewLeftPadding + TextViewRightPadding;
+
+    CGRect screenRect = [UIScreen mainScreen].bounds;
+    UITextView *expectedTextView = [[UITextView alloc] initWithFrame:screenRect];
+    expectedTextView.font = [UIFont fontWithName:@"OpenSans-Light" size:16];
+    expectedTextView.text = text;
+    CGSize maxSize = CGSizeMake(screenRect.size.width - delta, MAXFLOAT);
+    CGSize calculatedSize = [expectedTextView sizeThatFits:maxSize];
+    
+    double paddingHight = ContainerTopPadding + ContainerBottomPadding + TextViewBottomPadding + TextViewTopPadding;
+    double height = calculatedSize.height + paddingHight;
+    double calculatedLeftPadding = screenRect.size.width - calculatedSize.width - ContainerRightPadding -TextViewLeftPadding - TextViewRightPadding;
+    
+    if (calculatedLeftPadding > ContainerLeftPadding * 1.1) {
+        if (calculatedLeftPadding - TimeStampContainerViewWidth < ContainerLeftPadding) {
+            height += height* 0.3;
+        }
+    } else {
+        height += 13.f;
     }
-    
-    if (text.length > MaxCharacterLength && text.length < 25) {
-        return 69.5f;
-    }
-    
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Helvetica-Light" size:16]};
-    CGRect rect = [text boundingRectWithSize:CGSizeMake(MaxBubbleChatWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesDeviceMetrics attributes:attributes context:nil];
-    
-    return [text boundingRectWithSize:CGSizeMake(MaxBubbleChatWidth, 5000.f) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading | NSStringDrawingUsesDeviceMetrics attributes:attributes context:nil].size.height+51;
+    return height;
 }
 
 @end

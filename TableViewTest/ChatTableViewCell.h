@@ -11,7 +11,8 @@
 @interface ChatTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) NSString *text;
-@property (strong, nonatomic) UIImage *chatImage;
+@property (strong, nonatomic) UIImage *bubbleChatImage;
+@property (strong, nonatomic) UIImage *deliveryStatusImage;
 
 + (NSString *)reuseIdentifier;
 + (double)rowHeightForText:(NSString *)text;
